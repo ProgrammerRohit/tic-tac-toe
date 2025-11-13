@@ -1,0 +1,110 @@
+body {
+  background: linear-gradient(135deg, #1f1f1f, #0d1b2a, #1b263b);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+  margin: 0;
+}
+
+.gameHeading {
+  text-align: center;
+  color: #e0eaff;
+  text-shadow: 0 0 10px #9abafc, 0 0 20px #3d7bfe;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.turnText {
+  color: #b8e0d2;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.playerWin {
+  text-align: center;
+  color: #4af9a1;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px #23f0c7;
+  height: 30px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 18px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.slots {
+  width: 110px;
+  height: 110px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    5px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.slots:hover:not(:disabled) {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 0 20px #61dafb, 0 0 40px #61dbff;
+}
+
+.slots:disabled {
+  cursor: not-allowed;
+}
+
+.filled {
+  transform: scale(1.02);
+  box-shadow: inset 0 0 15px #3a86ff;
+}
+
+.slotImage {
+  width: 65px;
+  filter: drop-shadow(0 0 6px #fff);
+}
+
+.resetGame {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.resetGame a {
+  padding: 12px 26px;
+  background: #3a86ff;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 0 0 12px #3a86ff;
+  transition: 0.25s;
+}
+
+.resetGame a:hover {
+  box-shadow: 0 0 25px #3a86ff, 0 0 40px #3a86ff;
+  transform: scale(1.08);
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 90px);
+    gap: 12px;
+  }
+
+  .slots {
+    width: 90px;
+    height: 90px;
+  }
+
+  .slotImage {
+    width: 50px;
+  }
+}
